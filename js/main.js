@@ -10,8 +10,6 @@
       input = input + spanOutput;
       console.log(input);
       screenOutput.text(input);
-
-
     });
 
     $('.operator:not(#calc)').click(function(event) {
@@ -24,9 +22,17 @@
       if ( operator === 'x') {
         console.log(parseInt(doTheMath[0]) * parseInt(doTheMath[1]));
         screenOutput.text(parseInt(doTheMath[0]) * parseInt(doTheMath[1]));
-      } else {
-        console.log('not done');
+      } else if ( operator === '+') {
+        console.log(parseInt(doTheMath[0]) + parseInt(doTheMath[1]));
+        screenOutput.text(parseInt(doTheMath[0]) + parseInt(doTheMath[1]));
+      } else if ( operator === '-') {
+        console.log(parseInt(doTheMath[0]) - parseInt(doTheMath[1]));
+        screenOutput.text(parseInt(doTheMath[0]) - parseInt(doTheMath[1]));
+      } else if ( operator === '\u00f7') {
+        console.log(parseInt(doTheMath[0]) / parseInt(doTheMath[1]));
+        screenOutput.text(parseInt(doTheMath[0]) / parseInt(doTheMath[1]));
       }
+
 
     });
 
@@ -34,7 +40,7 @@
     // also need to make this work with one click
 
     $('#cancel').click(function(event) {
-      input = '0';
+      input = '';
     });
 
   });
